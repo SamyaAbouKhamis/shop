@@ -1,0 +1,7 @@
+{
+  "name": "Ionic/Ec",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
