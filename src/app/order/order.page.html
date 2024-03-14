@@ -1,0 +1,26 @@
+
+<ion-content >
+  <div class="search ion-padding">
+    <ion-item lines="none">
+      <ion-input placeholder="Search Your Product" [debounce]="1000" (ionInput)="handleInput($event)"></ion-input>
+      <ion-icon name="search-outline" slot="start"></ion-icon>
+    </ion-item>
+  </div> 
+  <h1 class="title">My Orders</h1>
+
+  <div class="order-items" >
+    <ion-card mode="ios" *ngFor="let foods of food ">
+      <ion-card-content>
+        <div class="item-img">
+          <img src={{foods.img}} />
+        </div>
+
+        <div class="item-info"  >
+         <p>{{foods.name}}</p>
+        <p>Lotto.LTD</p>
+          <p>$34.00</p>
+
+          <ion-button expand="block" class="main-button" routerLink="/item-details">Order Now</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
