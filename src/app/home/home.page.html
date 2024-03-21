@@ -1,34 +1,89 @@
 
+<ion-header [translucent]="true">
+  
+  <ion-toolbar >
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu Button</ion-title>
+    </ion-toolbar>
+    <ion-icon name="search-outline" slot="end" routerLink="/search" style="width: 50px; height: 30px;" ></ion-icon>
+    <ion-icon name="person-outline" slot="end" routerLink="/signup" style="width: 50px; height: 30px;"></ion-icon>
+ 
 
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-     
-     <ion-button routerLink="/signup">signin</ion-button>
-    
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button class="notification">
-        <ion-icon name="notifications-outline" color="dark"></ion-icon>
-      
-      </ion-button>
-      <ion-button class="filter">
-        <ion-icon name="funnel-outline" color="dark"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+</ion-toolbar>
 </ion-header>
+
 
 <ion-content>
  
 
   <div class="title ion-padding">
-    <h2>Categories</h2>
-    <p>See all</p>
+    <ion-segment [scrollable]="true" value="heart">
+      <ion-segment-button >
+        <ion-label>الرئيسية</ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 1 </ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 3</ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 4</ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 5</ion-label>
+      </ion-segment-button>
+      <ion-segment-button >
+        <ion-label>تصنيف 6</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+   
+    <img src="https://cdn.dsmcdn.com/marketing/datascience/automation/2024/2/16/Ar_Mobile_Topinfo_Sar_202402161050.gif">
+   
     <swiper-container>
-      <swiper-slide><img src="assets/images/food6.jpg" style="width: 1700px; "></swiper-slide>
-      <swiper-slide><img src="assets/images/food2.jpg"  style="width: 1700px; "></swiper-slide>
-      <swiper-slide><img src="assets/images/food5.jpg"  style="width: 1700px; "></swiper-slide>
+      <swiper-slide><img src="assets/images/shop.jpg" ></swiper-slide>
+      <swiper-slide><img src="assets/images/shep.jpg"  ></swiper-slide>
+      
     </swiper-container>
+  
   </div>
-<app-order></app-order>
+ 
+  
+    <p style="direction: rtl;">عروض يومية</p>
+    <swiper-container [slidesPerView]="3" [loop]="true">
+      <swiper-slide>   <img src="assets/images/Ar_Proms.jpg " > </swiper-slide>
+      <swiper-slide>  <img src="assets/images/Ar_Proms.jpg " ></swiper-slide>
+      <swiper-slide>  <img src="assets/images/Ar_Proms.jpg " ></swiper-slide>
+    </swiper-container>
+     
+      <img src="https://cdn.dsmcdn.com/marketing/datascience/automation/2024/2/5/Ar_Codebanner_Homepagemobile_202402051147.gif">
+    
+   
+
+  
+  
+    <p style="direction: rtl;">عروض شهر رمضان  </p>
+   
+    <swiper-container [slidesPerView]="3" [loop]="true">
+      <swiper-slide>   <img src="assets/images/Dresses.jpg " > </swiper-slide>
+      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
+      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
+    </swiper-container>
+    <swiper-container [slidesPerView]="3" [loop]="true">
+      <swiper-slide>   <img src="assets/images/Dresses.jpg " > </swiper-slide>
+      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
+      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
+    </swiper-container>
+    
+   
+</ion-content>

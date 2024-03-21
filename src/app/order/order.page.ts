@@ -12,24 +12,24 @@ import { RouterLink } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule,RouterLink,NgFor]
 })
 export class OrderPage implements OnInit {
-  searchText:any;
-  food=[
-    {name:'salad',img: 'assets/images/food2.jpg'},
-    {name:'Beef Burger',img: 'assets/images/food1.jpg'},
-    {name:'chicken Burger',img: 'assets/images/food3.jpg'},
-    {name:'cheese Burger',img: 'assets/images/food4.jpg'},
-    {name:'hamburger',img: 'assets/images/food5.jpg'}
-  ]
-    results: any;
-    data: any;
-    event:any;
+  // searchText:any;
+  // food=[
+  //   {name:'salad',img: 'assets/images/food2.jpg'},
+  //   {name:'Beef Burger',img: 'assets/images/food1.jpg'},
+  //   {name:'chicken Burger',img: 'assets/images/food3.jpg'},
+  //   {name:'cheese Burger',img: 'assets/images/food4.jpg'},
+  //   {name:'hamburger',img: 'assets/images/food5.jpg'}
+  // ]
+  //   results: any;
+  //   data: any;
+  //   event:any;
   
     
-    handleInput(event:any) {
-      console.log(event)
-      const query = event.target.value.toLowerCase();
-      this.results = this.data.filter((d:any) => d.toLowerCase().indexOf(query) > -1);
-    } 
+  //   handleInput(event:any) {
+  //     console.log(event)
+  //     const query = event.target.value.toLowerCase();
+  //     this.results = this.data.filter((d:any) => d.toLowerCase().indexOf(query) > -1);
+  //   } 
   
     
   constructor() { }

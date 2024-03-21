@@ -30,4 +30,12 @@ export const routes: Routes = [
     path: 'item-details',
     loadComponent: () => import('./item-details/item-details.page').then( m => m.ItemDetailsPage)
   },
+  {
+    path: 'splash-screen',
+    loadComponent: () => import('./splash-screen/splash-screen.page').then( m => m.SplashScreenPage)
+  },
+  {
+    path: 'search',
+    loadComponent: () => import('./search/search.page').then( m => m.SearchPage)
+  },
 ];

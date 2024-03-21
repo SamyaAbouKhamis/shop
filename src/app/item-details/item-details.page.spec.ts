@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { ItemDetailsPage } from './item-details.page';
 
 describe('ItemDetailsPage', () => {

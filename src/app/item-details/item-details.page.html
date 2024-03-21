@@ -14,7 +14,7 @@
 
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="search-outline" color="dark"></ion-icon>
+      
       </ion-button>
       <ion-button class="notification">
         <ion-icon name="notifications-outline" color="dark"></ion-icon>
@@ -25,16 +25,19 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/images/food1.jpg" />
-  <!-- </ion-slide>
-</ion-slides> -->
+ 
+  <swiper-container>
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+  </swiper-container>
 
 <div class="ion-padding-vertical">
   <h1 class="item-name">Black turtleneck top</h1>
 
   <h4 class="price">
-    $42
-    <span class="real-price">$62</span>
+    $42.34
+   
   </h4>
 </div>
 
@@ -42,89 +45,33 @@
   <hr>
 </div>
 
-<div class="review">
-  <ion-row>
-    <ion-col size="6">
-      <div class="rating">
-        4.5
-      </div>
-
-      Very Good
-    </ion-col>
-    <ion-col size="6">
-      <div class="count">49 Reviews</div>
-    </ion-col>
-  </ion-row>
+<div class="seperator">
+  <hr>
 </div>
+
+
 
 <div class="seperator">
   <hr>
 </div>
 
-<div class="description">
-  <h5>Description</h5>
 
-  <p>
-    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
-  </p>
-
-</div>
-
-<div class="seperator">
-  <hr>
-</div>
-
-<div class="variation">
-  <ion-segment (ionChange)="segmentChanged($event)" value="size">
-    <ion-segment-button value="size">
-      <ion-label>Select Size</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="color">
-      <ion-label>Select Color</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-</div>
-
-<div class="seperator">
-  <hr>
-</div>
-
-<div class="variation-selector">
-  <div class="sizes" [class.active-variation]="activeVariation == 'size'">
-    <div [class.active]="selectedSize == 1" (click)="changeSize(1)">
-      S
-    </div>
-    <div [class.active]="selectedSize == 2" (click)="changeSize(2)">
-      M
-    </div>
-    <div [class.active]="selectedSize == 3" (click)="changeSize(3)">
-      L
-    </div>
-    <div [class.active]="selectedSize == 4" (click)="changeSize(4)">
-      XL
-    </div>
-  </div>
-
-  <div class="colors" [class.active-variation]="activeVariation == 'color'">
-    <div [class.active]="selectedColor == 1" (click)="changeColor(1)">
-      BLACK
-    </div>
-    <div [class.active]="selectedColor == 2" (click)="changeColor(2)">
-      GREEN
-    </div>
-    <div [class.active]="selectedColor == 3" (click)="changeColor(3)">
-      BLUE
-    </div>
-  </div>
-</div>
 </ion-content>
 <ion-footer>
-<ion-row>
-  <ion-col size="6">
-    <ion-button expand="full" color="light" routerLink="/cart">Add to cart</ion-button>
+<!-- <ion-row>
+  <ion-col size="10">
+    <ion-button expand="full" color="primary" routerLink="/cart">Add to cart</ion-button>
   </ion-col>
-  <ion-col size="6">
-    <ion-button expand="full">Buy now</ion-button>
+  <ion-col size="2">
+   
+    
+      <ion-button fill="clear">-</ion-button>
+      <ion-label>1</ion-label>
+      <ion-button fill="clear">+</ion-button>
+  
   </ion-col>
-</ion-row>
+</ion-row> -->
+<ion-button size="10" expand="full" color="primary" routerLink="/cart">Add to cart</ion-button>
+
+
 </ion-footer>
