@@ -1,17 +1,34 @@
-
-<ion-header [translucent]="true">
-  
-  <ion-toolbar >
+<ion-menu contentId="main-content" >
+  <ion-header >
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button auto-hide="false"></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Menu Button</ion-title>
+      <ion-title>Menu Content</ion-title>
     </ion-toolbar>
-    <ion-icon name="search-outline" slot="end" routerLink="/search" style="width: 50px; height: 30px;" ></ion-icon>
-    <ion-icon name="person-outline" slot="end" routerLink="/signup" style="width: 50px; height: 30px;"></ion-icon>
+ </ion-header>
  
+  <ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+   <ion-header>
+  <ion-toolbar >
 
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false">
+
+        </ion-menu-button>
+        <img src="assets/icon/logo-light-thumbnail.png" style="max-width: 100%;
+        height: 3rem; padding: 0.1rem 0.2rem;">
+      </ion-buttons>
+   
+  
+    <ion-icon name="search-outline" slot="end" routerLink="/search" style="width: 50px; height: 30px;color: sandybrown;" ></ion-icon>
+    <ion-icon name="person-outline" slot="end" routerLink="/signup" style="width: 50px; height: 30px;color: sandybrown;"></ion-icon>
+    
+  <!-- <ion-button slot="end" class="cart-btn ion-color ion-color-primary md button button-clear in-toolbar ion-buttons button-has-icon-only ion-activatable ion-focusable"> -->
+     <!-- <ion-badge color="success" class="icon-badge bounce-ani ion-color ion-color-success md">8</ion-badge>  -->
+    <ion-icon slot="end" role="img" name="cart-outline" aria-colspan="bounce-ani md" style="width: 50px; height: 30px; color: sandybrown;" class="bounce-ani md">
+    </ion-icon>
+    <!-- <ion-badge color="success" slot="end" class="icon-badge bounce-ani ion-color ion-color-success md">8</ion-badge> -->
+  <!-- </ion-button> -->
 </ion-toolbar>
 </ion-header>
 
@@ -19,71 +36,138 @@
 <ion-content>
  
 
-  <div class="title ion-padding">
-    <ion-segment [scrollable]="true" value="heart">
-      <ion-segment-button >
+ <div>
+    <ion-segment _ngcontent-ng-c237363296 role="tablist" class="md segment-scrollable">
+      <ion-segment-button style="color: sandybrown;">
         <ion-label>الرئيسية</ion-label>
       </ion-segment-button>
-      <ion-segment-button >
+      
+     
+        <ion-segment-button >
         <ion-label>تصنيف 0</ion-label>
-      </ion-segment-button>
-      <ion-segment-button >
+        </ion-segment-button>
+ 
+     
+        <ion-segment-button>
         <ion-label>تصنيف 1 </ion-label>
-      </ion-segment-button>
-      <ion-segment-button >
+        </ion-segment-button>
+     
+     
+        <ion-segment-button >
         <ion-label>تصنيف 2</ion-label>
-      </ion-segment-button>
-      <ion-segment-button >
-        <ion-label>تصنيف 3</ion-label>
-      </ion-segment-button>
-      <ion-segment-button >
-        <ion-label>تصنيف 4</ion-label>
-      </ion-segment-button>
-      <ion-segment-button >
-        <ion-label>تصنيف 5</ion-label>
-      </ion-segment-button>
-      <ion-segment-button >
-        <ion-label>تصنيف 6</ion-label>
-      </ion-segment-button>
-    </ion-segment>
+        </ion-segment-button>
     
+      <ion-segment-button >
+        <ion-label >تصنيف 3</ion-label>
+      </ion-segment-button>
+    
+        <ion-segment-button >
+        <ion-label>تصنيف 4</ion-label>
+        </ion-segment-button>
+      
+      
+        <ion-segment-button >
+        <ion-label>تصنيف 5</ion-label>
+        </ion-segment-button>
+    
+     
+        <ion-segment-button >
+        <ion-label>تصنيف 6</ion-label>
+        </ion-segment-button>
+      
+      </ion-segment>
+    
+  
+      <app-fixd-bannar _ngcontent-ng-c237363296>
+        <img _ngcontent-ng-c3968500302 src="https://cdn.dsmcdn.com/marketing/datascience/automation/2024/2/16/Ar_Mobile_Topinfo_Sar_202402161050.gif" >
+      </app-fixd-bannar>
+         
    
-    <img src="https://cdn.dsmcdn.com/marketing/datascience/automation/2024/2/16/Ar_Mobile_Topinfo_Sar_202402161050.gif">
-   
-    <swiper-container>
-      <swiper-slide><img src="assets/images/shop.jpg" ></swiper-slide>
-      <swiper-slide><img src="assets/images/shep.jpg"  ></swiper-slide>
+   <app-slider-bannar>
+    <swiper-container dir="rtl" navigation="false" pagination="true" pagination-clickable="true">
+      
+      <swiper-slide class="swiper-slide-active" role="group"  aria-label="1/2"><img src="assets/images/shop.jpg"> </swiper-slide>
+      <swiper-slide class="swiper-slide-active" role="group" aria-label="1/2"><img src="assets/images/shep.jpg"></swiper-slide>
       
     </swiper-container>
-  
+  </app-slider-bannar>
+
   </div>
- 
+ <app-slider _ngcontent-ng-c237363296 _nghost-ng-c2705508517>
   
-    <p style="direction: rtl;">عروض يومية</p>
-    <swiper-container [slidesPerView]="3" [loop]="true">
-      <swiper-slide>   <img src="assets/images/Ar_Proms.jpg " > </swiper-slide>
-      <swiper-slide>  <img src="assets/images/Ar_Proms.jpg " ></swiper-slide>
-      <swiper-slide>  <img src="assets/images/Ar_Proms.jpg " ></swiper-slide>
-    </swiper-container>
+    <ion-grid _ngcontent-ng-c2705508517 class="md">
+      <ion-row _ngcontent-ng-c2705508517 class="md"> 
+        
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="12"
+        style="flex: 0 0 calc(calc(12/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        >
+      <h3> عروض يومية</h3></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+    <ion-row _ngcontent-ng-c2705508517 class="md"> 
+        
+      <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+      style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+      ><img src="assets/images/Ar_Proms.jpg " ></ion-col>
+      <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+      style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+      ><img src="assets/images/Ar_Proms.jpg " ></ion-col>
+      <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+      style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+      ><img src="assets/images/Ar_Proms.jpg " ></ion-col>
+      </ion-row>
+    <!-- <swiper-container >
+      <swiper-slide>
+         <div _ngcontent-ng-c2705508517> 
+           <img src="assets/images/Ar_Proms.jpg " ></div> </swiper-slide>
+      <swiper-slide style="width: 1000px; margin-left: 30px; "> <div _ngcontent-ng-c2705508517>  <img src="assets/images/Ar_Proms.jpg " ></div> </swiper-slide>
+      <swiper-slide style="width: 100px; margin-left: 30px; "> <div _ngcontent-ng-c2705508517>  <img src="assets/images/Ar_Proms.jpg " ></div> </swiper-slide> <swiper-slide>  <img src="assets/images/Ar_Proms.jpg " ></swiper-slide>
+      <swiper-slide style="width: 100px; margin-left: 30px; ">  <img src="assets/images/Ar_Proms.jpg " ></swiper-slide>
+    </swiper-container> -->
+  </app-slider>
+  <app-fixd-bannar _ngcontent-ng-c237363296>
+    <img _ngcontent-ng-c3968500302 src="https://cdn.dsmcdn.com/marketing/datascience/automation/2024/2/5/Ar_Codebanner_Homepagemobile_202402051147.gif" >
+  </app-fixd-bannar>
      
-      <img src="https://cdn.dsmcdn.com/marketing/datascience/automation/2024/2/5/Ar_Codebanner_Homepagemobile_202402051147.gif">
     
    
 
-  
-  
-    <p style="direction: rtl;">عروض شهر رمضان  </p>
+   <ion-grid _ngcontent-ng-c2705508517 class="md">
+      <ion-row _ngcontent-ng-c2705508517 class="md"> 
+        
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="12"
+        style="flex: 0 0 calc(calc(12/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        >
+      <h3> مستلزمات شهر رمضان</h3></ion-col>
+      </ion-row>
+    </ion-grid>
    
-    <swiper-container [slidesPerView]="3" [loop]="true">
-      <swiper-slide>   <img src="assets/images/Dresses.jpg " > </swiper-slide>
-      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
-      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
-    </swiper-container>
-    <swiper-container [slidesPerView]="3" [loop]="true">
-      <swiper-slide>   <img src="assets/images/Dresses.jpg " > </swiper-slide>
-      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
-      <swiper-slide>  <img src="assets/images/Dresses.jpg " ></swiper-slide>
-    </swiper-container>
+
+      <ion-row _ngcontent-ng-c2705508517 class="md"> 
+        
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+        style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        ><img src="assets/images/Dresses.jpg " ></ion-col>
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+        style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        ><img src="assets/images/Dresses.jpg " ></ion-col>
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+        style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        ><img src="assets/images/Dresses.jpg " ></ion-col>
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+        style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        ><img src="assets/images/Dresses.jpg " ></ion-col>
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+        style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        ><img src="assets/images/Dresses.jpg " ></ion-col>
+        <ion-col _ngcontent-ng-c2705508517 class="md" size="4"
+        style="flex: 0 0 calc(calc(4/var(--ion-grid-colums,12))*100); width: calc(calc(12/var(--ion-grid-colums,12))*100);"
+        ><img src="assets/images/Dresses.jpg " ></ion-col>
+
+     
+      </ion-row>
     
    
 </ion-content>

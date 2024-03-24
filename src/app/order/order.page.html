@@ -1,106 +1,125 @@
 
 <ion-content >
 
-  <ion-header>
-    <ion-toolbar class="ion-color ion-color-light md in-toolbar" >
+
+    <ion-toolbar class="ion-color ion-color-light md in-toolbar"  >
     <div class="ion-padding " style="text-align: center;">
-      catagory catagory <br>
-      product 523
+    <div style="font-weight: bold;">Catagory Catagory</div>
+    <div style="font-size: small; padding-top: 5px;">545 products</div>
     </div>
     
-    </ion-toolbar>
-    <ion-grid>
+  </ion-toolbar >
+
+  <ion-toolbar>
+  <ion-grid class="md">
+    <ion-row class="md">
+<ion-col _ngcontent-ng-c1027694040 clo="6" class="md">
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <ion-button  size="small" fill="clear" color="primary">
+<ion-icon name="funnel" style="color: sandybrown;"></ion-icon>
+<ion-label style="color: sandybrown;">Sorting</ion-label>
+          </ion-button>
+        </div>
+      </ion-col> 
+      <ion-col _ngcontent-ng-c1027694040 clo="6" class="md">
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <ion-button  size="small" fill="clear" color="primary">
+            <ion-icon name="options" style="color: sandybrown;"></ion-icon>
+<ion-label style="color: sandybrown;">Sorting</ion-label>
+          </ion-button>
+        </div>
+      </ion-col>  
+</ion-row>
+</ion-grid>
+ </ion-toolbar>
+
+<div>
+  <div>
+    <ion-chip class="md chipe-outline ion-activatable">Outline</ion-chip>
+    <ion-chip>Outline</ion-chip>
+    <ion-chip>Outline</ion-chip>
+    <ion-chip>Outline</ion-chip>
+  </div>
+</div>
+
+
+
+
+ <ion-grid>
       <ion-row>
-        <ion-col size="2" offset="4">
-          <ion-segment-button value="default">
-            <ion-label>FILTER</ion-label>
-          </ion-segment-button>
-        </ion-col>
-        <ion-col size="2">
-          <ion-segment-button value="default">
-            <ion-label>SORTING</ion-label>
-          </ion-segment-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-header>   
-   
-  <!-- <h1 class="title">My Orders</h1>
-
-  <div class="order-items" >
-    <ion-card mode="ios" *ngFor="let foods of food ">
-      <ion-card-content>
-        <div class="item-img">
-          <img src={{foods.img}} />
+        <ion-col _ngcontent-ng-c253642629 class="md" size="6"  
+         style="flex: 0 0 calc(calc(6/var(--ion-grid-colums,12))*100); width: calc(calc(6/var(--ion-grid-colums,12))*100);">
+          <ion-card routerLink="/item-details"> 
+        <img src="assets/images/zoom.jpg">
+        <ion-card-header>
+          <ion-card-subtitle>
+            <div>
+              <span style="font-weight:bold;">ديفاكتو</span>
+              جوارب قطنية نسائية
+            </div>
+          </ion-card-subtitle>
+          <ion-subtitle style="color: sandybrown;">
+            $15.9
+          </ion-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col _ngcontent-ng-c253642629 class="md" size="6"  
+    style="flex: 0 0 calc(calc(6/var(--ion-grid-colums,12))*100); width: calc(calc(6/var(--ion-grid-colums,12))*100);">
+    
+      <ion-card routerLink="/item-details"> 
+    <img src="assets/images/zoom.jpg">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <div>
+          <span style="font-weight: bold;">ديفاكتو</span>
+          جوارب قطنية نسائية
         </div>
+      </ion-card-subtitle>
+      <ion-subtitle style="color: sandybrown;">
+        $15.9
+      </ion-subtitle>
+    </ion-card-header>
+  </ion-card >
+</ion-col>
+<ion-col _ngcontent-ng-c253642629 class="md" size="6">
+  <ion-card routerLink="/item-details"> 
+<img src="assets/images/zoom.jpg">
+<ion-card-header>
+  <ion-card-subtitle>
+    <div>
+      <span style="font-weight: bold;">ديفاكتو</span>
+      جوارب قطنية نسائية
+    </div>
+  </ion-card-subtitle>
+  <ion-subtitle style="color: sandybrown;">
+    $15.9
+  </ion-subtitle>
+</ion-card-header>
+</ion-card>
+</ion-col>
+<ion-col _ngcontent-ng-c253642629 class="md" size="6">
+  <ion-card routerLink="/item-details"> 
+<img src="assets/images/zoom.jpg">
+<ion-card-header>
+  <ion-card-subtitle>
+    <div>
+      <span style="font-weight: bold;">ديفاكتو</span>
+      جوارب قطنية نسائية
+    </div>
+  </ion-card-subtitle>
+  <ion-subtitle style="color: sandybrown;">
+    $15.9
+  </ion-subtitle>
+</ion-card-header>
+</ion-card>
+</ion-col>
 
-        <div class="item-info"  >
-         <p>{{foods.name}}</p>
-        <p>Lotto.LTD</p>
-          <p>$34.00</p>
-
-          <ion-button expand="block" class="main-button" routerLink="/item-details">Order Now</ion-button>
-        </div>
-      </ion-card-content>
-    </ion-card> -->
-
-
-    <ion-grid>
-      <ion-row >
-        <ion-col size="6" class="md" style="flex: 0 0 calc();">
-          <ion-card class="ion-no-margin md" routerLink="/item-details">
-          <img alt="Silhouette of mountains" src="assets/images/org_zoom.jpg" />
-          <ion-card-header>
-            <ion-card-title>ديفاكتو جوار</ion-card-title>
-            <ion-card-subtitle>نسائية</ion-card-subtitle>
-          </ion-card-header>
-        
-          <ion-card-content>
-            15.9$
-          </ion-card-content>
-        </ion-card> </ion-col>
-        <ion-col size="6"> 
-          <ion-card class="ion-no-margin md" routerLink="/item-details">
-            <img alt="Silhouette of mountains" src="assets/images/org_zoom.jpg" />
-            <ion-card-header>
-              <ion-card-title> ديفاكتو جوار</ion-card-title>
-              <ion-card-subtitle>نسائية</ion-card-subtitle>
-            </ion-card-header>
           
-            <ion-card-content>
-              15.9$
-            </ion-card-content>
-          </ion-card> </ion-col>
-      </ion-row>
-    </ion-grid>
+  
 
-    <ion-grid>
-      <ion-row >
-        <ion-col size="6" class="md" style="flex: 0 0 calc();">
-          <ion-card class="ion-no-margin md" routerLink="/item-details">
-          <img alt="Silhouette of mountains" src="assets/images/org_zoom.jpg" />
-          <ion-card-header>
-            <ion-card-title> ديفاكتو</ion-card-title>
-            <ion-card-subtitle>نسائية</ion-card-subtitle>
-          </ion-card-header>
-        
-          <ion-card-content>
-            15.9$
-          </ion-card-content>
-        </ion-card> </ion-col>
-        <ion-col size="6"> 
-          <ion-card class="ion-no-margin md" routerLink="/item-details">
-            <img alt="Silhouette of mountains" src="assets/images/org_zoom.jpg" />
-            <ion-card-header>
-              <ion-card-title> ديفاكتو</ion-card-title>
-              <ion-card-subtitle>نسائية</ion-card-subtitle>
-            </ion-card-header>
-          
-            <ion-card-content>
-              15.9$
-            </ion-card-content>
-          </ion-card> </ion-col>
-      </ion-row>
+    
+    </ion-row>
     </ion-grid>
-
+    <!-- <p>Search input: {{ searchInput }}</p> -->
   </ion-content>

@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
+import { OrderService } from '../order.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-order',
   templateUrl: './order.page.html',
   styleUrls: ['./order.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule,RouterLink,NgFor]
+  imports: [IonicModule, CommonModule, FormsModule,RouterLink,NgFor],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class OrderPage implements OnInit {
   // searchText:any;
@@ -31,10 +34,18 @@ export class OrderPage implements OnInit {
   //     this.results = this.data.filter((d:any) => d.toLowerCase().indexOf(query) > -1);
   //   } 
   
-    
-  constructor() { }
+  searchInput: string = '';
+  subscription!: Subscription;
+
+  constructor(private orderService: OrderService) {}
 
   ngOnInit() {
+    this.subscription = this.orderService.currentSearchInput.subscribe(input => {
+      this.searchInput = input;
+    });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
