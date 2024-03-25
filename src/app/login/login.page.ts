@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AlertController, IonicModule } from '@ionic/angular';
-import * as intlTelInput from 'intl-tel-input';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -29,6 +29,8 @@ export class LoginPage implements OnInit {
     });
     await alert.present();
   }
+ 
+  
 }
   
 
