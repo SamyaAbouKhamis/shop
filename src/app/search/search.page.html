@@ -9,13 +9,17 @@
 
     </ion-buttons>
 
+    <ion-buttons slot="end">
     <ion-icon name="person-outline" slot="end" routerLink="/signup"
-      style="width: 50px; height: 30px;color: sandybrown;"></ion-icon>
+      style="width: 50px; height: 30px;"></ion-icon>
 
 
-    <ion-icon name="cart-outline" slot="end" style="width: 50px; height: 30px; color: sandybrown;"></ion-icon>
+      <ion-button class="badge">
+        <ion-icon  slot="icon-only" name="cart-outline" style="color: sandybrown;"></ion-icon>
+        <ion-badge  style=" position: absolute;top: -10px;left: 5px;border-radius: 20px;" color="success">99</ion-badge>  
 
-
+      </ion-button>
+</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -39,7 +43,10 @@
 
 
   @if(loading) {
-  <div>loading ....</div>
+  <div>    <ion-progress-bar _ngcontent-ng-c972382060="" 
+     type="indeterminate" role="progressbar" aria-valuemin="0" 
+    aria-valuemax="1" class="ion-color ion-color-warning md in-toolbar"
+    type="indeterminate"></ion-progress-bar></div>
   }
   
   <ion-toolbar class="ion-color ion-color-light md in-toolbar">
