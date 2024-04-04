@@ -21,7 +21,7 @@ export class AppComponent {
   }
   initializeApp() {
     this.platform.ready().then(()=>{
-      this.router.navigateByUrl('splash-screen');
+      // this.router.navigateByUrl('splash-screen');
     })
   }
   

@@ -16,24 +16,30 @@ import { RouterLink } from '@angular/router';
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule,OrderPage,RouterLink],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
+  imports: [IonicModule, CommonModule, FormsModule, OrderPage, RouterLink],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class SearchPage implements OnInit {
 
-  
-  constructor(private orderhService: OrderService) {}
+  searched!: boolean;
+  loading!: boolean;
+  constructor(private orderhService: OrderService) { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   onSearchChange(event: any) {
     this.orderhService.changeSearchInput(event.detail.value);
   }
 
-
+  onSearch() {
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      this.searched = true;
+    }, 500);
+  }
 }
-  
+
 
 
