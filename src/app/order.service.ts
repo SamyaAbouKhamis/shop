@@ -13,4 +13,15 @@ export class OrderService {
   changeSearchInput(input: string) {
     this.searchInputSource.next(input);
   }
+
+
+
+getCountries() {
+  // You can replace this with an actual API call to fetch countries
+  return [
+    { code: 'us', name: 'United States' },
+    { code: 'ca', name: 'Canada' },
+    // Add more countries as needed
+  ];
+}
 }

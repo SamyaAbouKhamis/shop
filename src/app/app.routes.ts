@@ -38,5 +38,9 @@ export const routes: Routes = [
     path: 'search',
     loadComponent: () => import('./search/search.page').then( m => m.SearchPage)
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+  },
  
 ];

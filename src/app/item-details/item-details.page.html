@@ -1,17 +1,21 @@
-<ion-header style="position: absolute;" role="banner" class="md header-md header-collapse-none">
+<div *ngIf="loader">    <ion-progress-bar _ngcontent-ng-c972382060="" 
+  type="indeterminate" role="progressbar" aria-valuemin="0" 
+ aria-valuemax="1" class="ion-color ion-color-warning md in-toolbar"
+ type="indeterminate"></ion-progress-bar></div>
+
+  @if(searched){
+<ion-header style="position: absolute;" role="banner" class="md header-md header-collapse-none" *ngIf="!loader">
   <ion-toolbar style="background:transparent;--opacity:0" class="md in-toolbar">
   
 
-
+   
       <ion-buttons slot="start">
         <ion-back-button default-href="#" style="color: tomato;"></ion-back-button>
       </ion-buttons>
 
        <ion-buttons slot="end">
         <ion-button class="badge">
-          <ion-icon slot="icon-only" name="cart-outline" style="color: sandybrown;"></ion-icon>
-          <ion-badge style=" position: absolute;top: -10px;left: 5px;border-radius: 20px;" color="success">8</ion-badge>
-
+        
         </ion-button>
 
       </ion-buttons> 
@@ -114,3 +118,4 @@
 
 
 </ion-footer>
+}

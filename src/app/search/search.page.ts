@@ -6,7 +6,7 @@ import { OrderPage } from '../order/order.page';
 import { OrderService } from '../order.service';
 import { KeyedWrite } from '@angular/compiler';
 import { RouterLink } from '@angular/router';
-
+import { LoadingController } from '@ionic/angular';
 
 
 
@@ -21,6 +21,8 @@ import { RouterLink } from '@angular/router';
 })
 
 export class SearchPage implements OnInit {
+
+  
 
   searched!: boolean;
   loading!: boolean;
@@ -39,6 +41,17 @@ export class SearchPage implements OnInit {
       this.searched = true;
     }, 500);
   }
+  // async presentLoading() {
+  //   const loading = await this.loadingController.create({
+  //     message: 'Loading...',
+  //     duration: 2000 // Adjust duration as needed or remove it for indefinite loading
+  //   });
+  //   await loading.present();
+  // }
+  // async loadPage() {
+  //   await this.presentLoading();
+  //   // Perform the action to load your page data here
+  // }
 }
 
 
