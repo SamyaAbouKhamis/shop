@@ -1,51 +1,78 @@
-
 <ion-header>
   <ion-toolbar>
-   
-          <ion-buttons slot="start">
-            <ion-back-button default-href="#" style="color: sandybrown;"></ion-back-button>
-          </ion-buttons>
-        
-    
+
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#" style="color: sandybrown;"></ion-back-button>
+    </ion-buttons>
+
+
     <ion-icon name="notifications-outline" slot="end" style="width: 50px; height: 30px;color: sandybrown;"></ion-icon>
-       
-  
+
+
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list >
+  <ion-list>
     <ion-list-header class="md">
-      <ion-label >Ahmad Almunajjed</ion-label>
+      <ion-label>Ahmad Almunajjed</ion-label>
       <ion-button style="color: rgb(243, 147, 63);">Edit Profile</ion-button>
     </ion-list-header>
 
     <ion-list-header>
       <ion-label> Guest</ion-label>
-      <ion-button style="color: rgb(239, 132, 38); font-style: inherit;" routerLink="/login">Login</ion-button>
+
+
+      <ion-button id="open-modal" expand="block"
+        style="color: rgb(239, 132, 38); font-style: inherit;">Login</ion-button>
+
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>Login</ion-title>
+              <ion-buttons slot="end">
+              </ion-buttons>
+            </ion-toolbar>
+            <ion-list>
+              <ion-item>
+                <ion-select label="Popover"  interface="popover" placeholder="+1" >
+                  <ion-select-option *ngFor="let c of countries" >{{c.name}}{{c.code}}
+               
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+           <ion-button _ngcontent-ng-c2644260650="" color="warning" style="color: black;">Login</ion-button>
+            
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+
     </ion-list-header>
-<ion-item>
-  <ion-icon name="list" slot="start" style="color: sandybrown;"></ion-icon>
-  <ion-label>All Orders</ion-label>
-</ion-item>
-<ion-item>
-   <ion-icon name="help-circle-outline"  slot="start" style="color: sandybrown;"></ion-icon>
-  <ion-label>Help</ion-label>
-</ion-item>
-<ion-item>
-  <ion-icon name="pin"  slot="start" style="color: sandybrown;"></ion-icon>
-  <ion-label>Select Country</ion-label>
-</ion-item>
-<ion-item>
-  <ion-icon name="information-circle-outline"  slot="start" style="color: sandybrown;"></ion-icon>
-  <ion-label>About</ion-label>
-</ion-item>
-<ion-item>
-  
-  <ion-label class="ion-text-center">version 12.456.45</ion-label>
-</ion-item>
-   
+    <ion-item>
+      <ion-icon name="list" slot="start" style="color: sandybrown;"></ion-icon>
+      <ion-label>All Orders</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="help-circle-outline" slot="start" style="color: sandybrown;"></ion-icon>
+      <ion-label>Help</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="pin" slot="start" style="color: sandybrown;"></ion-icon>
+      <ion-label>Select Country</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="information-circle-outline" slot="start" style="color: sandybrown;"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-item>
+    <ion-item>
+
+      <ion-label class="ion-text-center">version 12.456.45</ion-label>
+    </ion-item>
+
   </ion-list>
- 
+
 </ion-content>
