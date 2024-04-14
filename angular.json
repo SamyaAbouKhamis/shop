@@ -31,8 +31,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "styles": ["src/global.scss", "src/theme/variables.scss",  "node_modules/intl-tel-input/build/css/intlTelInput.css",
+            "src/styles.css"],
+            "scripts": [ "node_modules/intl-tel-input/build/js/intlTelInput.min.js"]
         
           },
           "configurations": {

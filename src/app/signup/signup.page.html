@@ -29,24 +29,48 @@
 
       <ion-modal #modal trigger="open-modal">
         <ng-template>
-          <ion-content>
+          <div class="iti_flag-container"></div>
+           <ion-content>
             <ion-toolbar>
               <ion-title>Login</ion-title>
               <ion-buttons slot="end">
               </ion-buttons>
             </ion-toolbar>
-            <ion-list>
-              <ion-item>
-                <ion-select label="Popover"  interface="popover" placeholder="+1" >
-                  <ion-select-option *ngFor="let c of countries" >{{c.name}}{{c.code}}
-               
-                  </ion-select-option>
-                </ion-select>
-              </ion-item>
-            </ion-list>
-           <ion-button _ngcontent-ng-c2644260650="" color="warning" style="color: black;">Login</ion-button>
+            <div class="profile-info">
             
-          </ion-content>
+              <ion-row>
+                
+                <ion-input type="tel" [(ngModel)]="profile.tel" (ionInput)="parsePhoneNumber()">
+                  <div slot="label">
+                    <ion-select [(ngModel)]="countryCode" interface="popover"
+                    [interfaceOptions]="{cssClass: 'country-codes'}">
+                   
+
+                      <ion-select-option *ngFor="let phoneNumber of phoneNumbersPage" >
+                        {{phoneNumber.text}}
+                        
+                      </ion-select-option>
+                      
+                    </ion-select>
+                    <br>
+                  </div>
+                </ion-input>
+              </ion-row>
+            </div>
+            <!-- <ion-item>
+              <ion-label>Choose a country</ion-label>
+              <ion-select [(ngModel)]="countryCode">
+                <ion-select-option value="USA">
+                  <img src="../../assets/images/germany.png" alt="USA Flag" class="flag-icon"> United States
+                </ion-select-option>
+                <ion-select-option value="UK">
+                  <img src="assets/flags/uk.png" alt="UK Flag" class="flag-icon"> United Kingdom
+                </ion-select-option>
+              </ion-select>
+            </ion-item> -->
+            
+            <ion-button class="ion-color-primary" style="color: black;">Login</ion-button>
+          </ion-content> 
         </ng-template>
       </ion-modal>
 

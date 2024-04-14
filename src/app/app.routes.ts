@@ -39,8 +39,8 @@ export const routes: Routes = [
     loadComponent: () => import('./search/search.page').then( m => m.SearchPage)
   },
   {
-    path: 'login',
-    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+    path: 'phone-numbers',
+    loadComponent: () => import('./phone-numbers/phone-numbers.page').then( m => m.PhoneNumbersPage)
   },
- 
+
 ];

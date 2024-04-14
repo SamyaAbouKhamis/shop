@@ -1,3 +1,45 @@
 ion-select-option{
     background-image:url("../../assets/images/germany.png") ;
 }
+  
+  
+  
+  
+    
+  
+    ion-input ion-select {
+    
+      pointer-events: all;
+     
+     
+    }
+  
+    ion-select-option{
+        background-image: url("../../assets/images/globe.png");
+    }
+  
+   
+  
+ 
+  
+  
+  ::ng-deep .country-codes {
+    --width: 95%;
+    --max-width: 320px;
+    --max-height: 50%;
+  
+    ion-radio {
+      font-size: medium;
+    }
+  
+    ::part(container) {
+      display: none;
+    }
+    
+    ::ng-deep ion-select-popover ion-list, ::ng-deep ion-select-popover ion-list ion-item {
+      --background: #f2f2f2 !important;
+      background: #f2f2f2 !important;
+    
+    }
+  }
+
