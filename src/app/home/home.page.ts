@@ -23,5 +23,7 @@ register();
 })
 export class HomePage {
  
-  constructor() {}
+
+
+ constructor(){}
 }

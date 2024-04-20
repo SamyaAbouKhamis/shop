@@ -1,61 +1,106 @@
-import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
+import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { IonIcon } from '@ionic/angular/standalone';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IonModal, IonicModule, ModalController } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { PhoneNumber, isValidPhoneNumber, parsePhoneNumber} from 'libphonenumber-js';
-import intlTelInput from 'intl-tel-input';
-
-import { PhoneNumbersPage } from '../phone-numbers/phone-numbers.page';
-
-export interface Profile {
-  firstName?: string;
-  lastName?: string;
-  org?: string;
-  orgTitle?: string;
-  addressLine1?: string;
-  addressLine2?: string;
-  city?: string;
-  zipCode?: string;
-  stateProvince?: string;
-  country?: string;
-  tel?: string;
-};
+import { Subscription, interval } from 'rxjs';
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule,RouterLink,ReactiveFormsModule, HttpClientModule,
-    HttpClientJsonpModule,PhoneNumbersPage]
- 
-  
-})
-export class SignupPage implements OnInit {
+  imports: [IonicModule, CommonModule, FormsModule, RouterLink, ReactiveFormsModule, HttpClientModule, RouterLink,
+    HttpClientJsonpModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
-  phoneNumbersPage:any[]=[
-    { text:'', code: '+1', country: 'US' },
-    { text: '🇨🇦 +1   Canada', code: '+1', country: 'CA' },
-    { text: '🇷🇺 +7   Russia', code: '+7', country: 'RU' },
-    { text: '🇪🇬 +20  Egypt', code: '+20', country: 'EG' },]
-  profile: Profile = {};
-  separateDialCode!:boolean
-  constructor() { }
-  
-  ngOnInit() { }
-  
-  countryCode = "";
-  parsePhoneNumber() {
-    this.countryCode = "";
-    if (this.profile.tel && isValidPhoneNumber(this.profile.tel)) {
-      const phoneNumber = parsePhoneNumber(this.profile.tel)
-      if (phoneNumber?.country) {
-        this.countryCode = phoneNumber.country;
-      }
+})
+export class SignupPage {
+  countdown: number = 60; // Countdown starts from 60 seconds
+  private countdownSubscription!: Subscription;
+  private GetItems() {
+    const count = this.items.length = 1;
+    for (let i = 0; i < 50; i++) {
+      this.items.push(`Items ${count + i}`)
     }
+  };
+  ionInfiniteScroll(ev: any) {
+    this.GetItems();
+    (ev as InfiniteScrollCustomEvent).target.complete()
+  }
+
+  items: any = [];
+  phoneForm!: FormGroup;
+  formData!: string;
+  searched!: boolean;
+  loading!: boolean;
+  showSecondSection: boolean = true;
+
+  countries = [
+    { value: "+31", label: "+31 (Netherlands)" },
+    { value: "+1", label: "+1 (United States)" },
+    { value: "+44", label: "+44 (United Kingdom)" }
+  ];
+
+
+
+
+  constructor(private fb: FormBuilder, private modalController: ModalController) { }
+
+
+  closeModal() {
+    this.modalController.dismiss();
+  }
+
+  startCountdown() {
+    this.countdownSubscription = interval(1000).subscribe(() => {
+      if (this.countdown > 0) {
+        this.countdown--;
+      } else {
+        this.countdownSubscription.unsubscribe(); // Stop the countdown when it reaches 0
+      }
+    })
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      this.searched = true;
+    }, 10000);;
+  }
+  onContinueClick() {
+    this.showSecondSection = false;
+  }
+  ngOnDestroy() {
+    // Unsubscribe from interval when component is destroyed
+    if (this.countdownSubscription) {
+      this.countdownSubscription.unsubscribe();
+    }
+  }
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
+  ngOnInit() {
+    this.GetItems();
+    this.phoneForm = this.fb.group({
+      countryCode: ['+31'],
+      nationalNumber: ['', Validators.required],
+    });
+
+  }
+  isNationalNumberValid(): boolean {
+    const nationalNumberControl = this.phoneForm.get('nationalNumber');
+    const nationalNumberValue = nationalNumberControl?.value;
+    return (
+      nationalNumberControl &&
+      nationalNumberControl.valid &&
+      nationalNumberControl.value.startsWith('09') &&
+      nationalNumberValue.length < 10
+    );
   }
 
 }
+

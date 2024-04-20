@@ -2,11 +2,7 @@ ion-select-option{
     background-image:url("../../assets/images/germany.png") ;
 }
   
-  
-  
-  
-    
-  
+
     ion-input ion-select {
     
       pointer-events: all;
@@ -18,7 +14,17 @@ ion-select-option{
         background-image: url("../../assets/images/globe.png");
     }
   
-   
+    .block {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      ion-modal {
+        --height: auto;
+      }
   
  
   
@@ -42,4 +48,33 @@ ion-select-option{
     
     }
   }
+.span{
+  align-items: center;
+   justify-content: left;
+}
+.block {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-modal {
+  --height:700px;
+}
+
+.images {
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
+  top: 0;
+}
+h1{
+  font-size: 30px;
+  font-weight: 600;
+}
+.code-section{
+  margin-block-end: auto;
+}
 

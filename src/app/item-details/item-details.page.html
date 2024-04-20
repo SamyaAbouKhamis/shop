@@ -4,28 +4,22 @@
  type="indeterminate"></ion-progress-bar></div>
 
   @if(searched){
-<ion-header style="position: absolute;" role="banner" class="md header-md header-collapse-none" *ngIf="!loader">
-  <ion-toolbar style="background:transparent;--opacity:0" class="md in-toolbar">
-  
-
-   
+<ion-header style="position: absolute;"  *ngIf="!loader" >
+  <ion-toolbar  class="md in-toolbar">
       <ion-buttons slot="start">
         <ion-back-button default-href="#" style="color: tomato;"></ion-back-button>
       </ion-buttons>
 
-       <ion-buttons slot="end">
+       <ion-buttons slot="start">
         <ion-button class="badge">
-        
-        </ion-button>
-
-      </ion-buttons> 
-  
-
+          <ion-icon  slot="icon-only" name="cart-outline" style="color: sandybrown;"></ion-icon>
+          <ion-badge  style=" position: absolute;top: -10px;left: 5px;border-radius: 20px;" color="success">8</ion-badge>  
+      </ion-button>
+        </ion-buttons> 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <swiper-container dir="rtl" space-between="7" navigation="true" thumbs-swiper=".mySwiper2"
     style="--swiper-navigation-color:#fff; --swiper-pagination-color:#fff">
     <swiper-slide class="swiper-slide-prev" role="group" aria-label="1/7" style="width: 360px; margin-left: 10px;">
@@ -38,11 +32,9 @@
     <swiper-slide role="group" aria-label="5/7"><img src="assets/images/nature-5.jpg"></swiper-slide>
     <swiper-slide role="group" aria-label="6/7"><img src="assets/images/nature-6.jpg"></swiper-slide>
     <swiper-slide role="group" aria-label="7/7"><img src="assets/images/nature-7.jpg"></swiper-slide>
-
   </swiper-container>
 
   <swiper-container _ngcontent-ng-c2337211279 dir="rtl" space-between="10" slides-per-view="4" free-mode="true" watch-slides-progress="true" class="mySwiper2">
-
     <swiper-slide _ngcontent-ng-c2337211279 role="group" aria-label="1 / 10" class="swiper-slide-active swiper-slide-thumb-active" style="width: 90px; margin-left: 10px;">
       <img _ngcontent-ng-c2337211279 src="assets/images/nature-1.jpg" >
     </swiper-slide>
@@ -66,19 +58,17 @@
     </swiper-slide>
   </swiper-container>
 
-  <div class="ion-padding-vertical">
-    <h1 class="item-name">
+  <div class="ion-padding-horizontal">
+    <h1 class="item-name" >
       <span style="text-decoration: underline;">ديفاكتو</span>
       جوارب قطنية نسائية
     </h1>
   </div>
-
-  <div>
+  <div class="ion-padding-horizontal">
     <h2>$45.79</h2>
   </div>
 
-
-  <div>
+  <div class="ion-padding-horizontal">
     <ion-icon name="star" style="color: sandybrown;"></ion-icon>
     <ion-icon name="star" style="color: sandybrown;"></ion-icon>
     <ion-icon name="star" style="color: sandybrown;"></ion-icon>
@@ -86,29 +76,21 @@
     <ion-icon name="star"></ion-icon>
   </div>
 
-
-
-
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-
-    <ion-button expand="block" style="color: sandybrown;padding-right: 10px;">
-
-      <ion-label slot="start">Add to Cart</ion-label>
-
+    <ion-button expand="block" style="color: sandybrown;" class="ion-margin-horizontal">
+      <span class="button-inner" slot="start" shape="round">Add to Cart</span>
     </ion-button>
 
-    <ion-buttons _ngcontent-ng-c2337211279="" slot="end">
-      <ion-button _ngcontent-ng-c2337211279="" size="small" fill="outline" class="md button button-
-  button-outline in-toolbar in-buttons button-
- -icon-only ion-activatable ion-focusable">
-        <ion-icon _ngcontent-ng-c2337211279="" slot="icon-only" name="remove" role="img" class="md"></ion-icon>
+    <ion-buttons  slot="end">
+      <ion-button  size="small" fill="outline" shape="round" class="ion-margin-horizontal" style="border-radius: 14px;">
+        <ion-icon  slot="icon-only" name="remove" role="img" class="md" style="color: #0f0e0e;"></ion-icon>
       </ion-button>
-      <label>1</label>
+      <ion-input class="warning" value="1" style="text-align: center;width: 30px;" ></ion-input>
 
-      <ion-button fill="outline">
+      <ion-button fill="outline" shape="round">
         <ion-icon name="add"></ion-icon>
       </ion-button>
 

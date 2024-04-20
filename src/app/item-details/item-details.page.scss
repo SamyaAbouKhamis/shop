@@ -1,13 +1,26 @@
 
-
-
 ion-button {
     --background: #f17414;
     --background-hover:  #f17414;
     --background-activated: #f17414;
-    --background-focused:  #f17414;
+ 
+  }
+  .badge {
   
+    background-color: rgb(247, 235, 235);
+    color: rgb(245, 161, 50);
+ 
+    border-radius: 50%;
+ 
+    animation: animated-button 0.5s infinite alternate;
    
-  
   }
   
+  @keyframes animated-button {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
