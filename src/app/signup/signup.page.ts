@@ -125,6 +125,22 @@ export class SignupPage  {
       nationalNumberValue.length < 10
     );
   }
+  @ViewChild('phoneInput') phoneInput!: ElementRef;
+  ngAfterViewInit(): void {
+    intlTelInput(this.phoneInput.nativeElement, {
+      utilsScript:
+        'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+      separateDialCode: true,
 
+      preferredCountries: ['us', 'gb', 'br', 'ru', 'cn'],
+      customPlaceholder: function (
+        selectedCountryPlaceholder: string,
+        selectedCountryData: any
+      ) {
+        return 'e.g. ' + selectedCountryPlaceholder;
+      },
+    });
+    
+  }
 }
 
