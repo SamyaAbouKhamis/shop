@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#" style="color: sandybrown"></ion-back-button>
     </ion-buttons>
-    <ion-icon name="notifications-outline" slot="end" style="width: 50px; height: 30px; color: sandybrown"></ion-icon>
+    <ion-icon  style="width: 50px; height: 30px; color: sandybrown;" slot="end" name="notifications-outline"></ion-icon>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
@@ -12,7 +12,7 @@
       <ion-label>Ahmad Almunajjed</ion-label>
       <div>
         <ion-list-header>
-          <ion-button style="color: rgb(243, 147, 63)">Edit Profile</ion-button>
+          <ion-button style="color: rgb(243, 147, 63)" routerLink="/editprofile">Edit Profile</ion-button>
         </ion-list-header>
       </div>
     </ion-list-header>
@@ -20,8 +20,10 @@
       <ion-label> Guest</ion-label>
       <ion-button id="open-modal" expand="block" style="color: rgb(243, 147, 63)" (click)="setOpen(true)">
         login</ion-button>
-      <ion-modal #modal trigger="open-modal" [isOpen]="isModalOpen" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+        
+       <ion-modal #modal trigger="open-modal" [isOpen]="isModalOpen" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
         <ng-template>
+           
           <ion-header class="ion-no-border">
             <ion-toolbar style="background: transparent; --opacity: 0">
               <ion-title slot="end">Login</ion-title>
@@ -50,141 +52,74 @@
                 </h1>
               </ion-label>
             </div>
-            <!-- <form [formGroup]="phoneForm" *ngIf="showSecondSection">  -->
-            <!-- <ion-item>
-                <ion-label></ion-label>
-                <ion-select label="Country Code" labelPlacement="floating">
-                  
-                  <ion-select-option *ngFor="let country of filteredCountries" [value]="country.value">{{ country.label }}</ion-select-option>
-                </ion-select>
-              </ion-item>  -->
-
-
-            <!-- <ion-content>  
-              
-            <ion-button id="open-modal" expand="block">Open</ion-button>
-            <ion-modal #modal trigger="open-modal" > 
-              <ng-template>
-           <ion-card>
-            <ion-segment role="tablist" class="md segment-scrollable">
-            <ion-searchbar ></ion-searchbar>
            
-                <ion-list>
-                    <ion-label>
-                
-                     <ion-item slot="left" value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item> 
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                      <ion-item value="+31">+31 (Netherlands)</ion-item>
-                     
-                    </ion-label>
-              
-                </ion-list>
-               </ion-segment>
-              </ion-card>
-          </ng-template>
-          </ion-modal> 
-           <ion-infinite-scroll (ionInfinite)="ionInfiniteScroll($event)">
-            <ion-infinite-scroll-content></ion-infinite-scroll-content>
-          </ion-infinite-scroll> -->
-            <!-- </ion-content>   -->
+<div *ngIf="!showSecondSection" >
+  
+
+  <div class="ion-margin">
+    <div class="images">
+      <img class="img" src="assets/images/logo-light.png" style="width: 140px;" />
+    </div>
+    <ion-label class="ion-margin-bottom" style="
+      display: flex;
+      align-items: flex-end;
+      justify-content: left;
+      font-size: larger;
+    ">
+      <h1>Enter code sent to you</h1>
+    </ion-label>
+  </div>
+
+  <ion-item>
+    <ion-input class="ion-text-center" type="number" fill="outline" placeholder="0000"></ion-input>
+  </ion-item>
+  <ion-button class="button-clear" expand="block" fill="clear" style="color: rgb(232, 134, 64)"
+    (click)="startCountdown()">
+    Send again
+  </ion-button>
+  <br>
+  @if(loading){
+  <div class="ion-text-center">after 00: {{ countdown }} seconds</div><br>}
+  <ion-button (click)="closeModal()" shape="round" expand="block" routerLink="/home"
+    style="border-radius: 90px">
+    Login
+  </ion-button>
+
+</div>
 
 
-            <form [formGroup]="phoneForm" *ngIf="showSecondSection">
-              <div class="input-group" class="ion-float-left">
+          
+          
+ 
+    
+      <div *ngIf="showSecondSection">
+     
+        <ion-button expand="block" (click)="setOpen(true)" (click)="onContinueClick()" shape="round">
+          COUNTINUE WITH WHATSAPP
+        </ion-button>
+      </div>
+  
+      <div *ngIf="showSecondSection">
+        <ion-button class="ion-margin-vertical" shape="round" expand="block" fill="outline" (click)="setOpen(true)"
+          (click)="onContinueClick()">
+          COUNTINUE WITH SMS
+        </ion-button>
+      </div>
+  
 
-                <div class="input-group" class="ion-float-left">
-                  <label>
-                    <div class="input-group-prepend">
-                      <select class="custom-select" formControlName="countryCode">
-                        <option value="+31">+31 (Netherlands)</option>
-                        <option value="+1">+1 (United States)</option>
-                        <option value="+44">+44 (United Kingdom)</option>
-                      </select>
-                    </div>
-                    <ion-input label="Solid input" label-placement="floating"
-                      style="align-items: center; justify-content: center" placeholder="Enter national number"
-                      formControlName="nationalNumber" class="form-control"></ion-input>
-                  </label>
-                </div>
-                <br />
+    </div>
+    
+             
+           
+      
+     
+   
 
-                <br />
-                <div *ngIf="phoneForm.get('nationalNumber')?.invalid && phoneForm.get('nationalNumber')touched"
-                  class="text-danger" class="ion-float-left"> 
-                  <!-- Invalid national number -->
-                </div>
-                <div *ngIf="isNationalNumberValid()" class="text-success" style="color: rgb(75, 139, 11)"
-                  class="ion-float-left">
-                  To Short
-                </div>
-              </div>
-            </form>
-            <br>
-            <br><br>
-            <div *ngIf="showSecondSection">
-              <ion-button expand="block" (click)="setOpen(true)" (click)="onContinueClick()" shape="round">
-
-                COUNTINUE WITH WHATSAPP
-              </ion-button>
-            </div>
-          </div>
-          <div *ngIf="!showSecondSection" class="cod">
-
-            <div class="ion-margin">
-              <div class="images">
-                <img class="img" src="assets/images/logo-light.png" style="width: 140px;" />
-              </div>
-              <ion-label class="ion-margin-bottom" style="
-                display: flex;
-                align-items: flex-end;
-                justify-content: left;
-                font-size: larger;
-              ">
-                <h1>Enter code sent to you</h1>
-              </ion-label>
-            </div>
-
-            <ion-item>
-              <ion-input class="ion-text-center" type="number" fill="outline" placeholder="0000"></ion-input>
-            </ion-item>
-            <ion-button class="button-clear" expand="block" fill="clear" style="color: rgb(232, 134, 64)"
-              (click)="startCountdown()">
-              Send again
-            </ion-button>
-            <br>
-            @if(loading){
-            <div class="ion-text-center">after 00: {{ countdown }} seconds</div><br>}
-            <ion-button (click)="closeModal()" shape="round" expand="block" routerLink="/home"
-              style="border-radius: 90px">
-              Login
-            </ion-button>
-
-          </div>
-          <div *ngIf="showSecondSection">
-            <ion-button class="ion-margin-vertical" shape="round" expand="block" fill="outline" (click)="setOpen(true)"
-              (click)="onContinueClick()">
-              COUNTINUE WITH SMS
-            </ion-button>
-          </div>
+          
+ 
         </ng-template>
       </ion-modal>
+ 
     </ion-list-header>
 
     <ion-item>
@@ -207,4 +142,5 @@
       <ion-label class="ion-text-center">version 12.456.45</ion-label>
     </ion-item>
   </ion-list>
+   
 </ion-content>

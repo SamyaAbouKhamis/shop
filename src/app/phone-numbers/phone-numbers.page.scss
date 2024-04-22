@@ -1,0 +1,44 @@
+
+/* Styles for the intl-tel-input component */
+.intl-tel-input {
+    position: relative;
+    display: block;
+  }
+  
+  /* Custom styles for the dropdown */
+  .intl-tel-input .country-list {
+    max-height: 200px; /* Limit height and enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 4px; /* Match your design's border radius */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds shadow for depth */
+  }
+  
+  /* Enhancing the visibility of the scrollbar */
+  .intl-tel-input .country-list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .intl-tel-input .country-list::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+  }
+  
+  .intl-tel-input .country-list::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+  /* Style the selected flag dropdown button */
+  .intl-tel-input .selected-flag {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  /* Style adjustments for mobile responsiveness */
+  @media (max-width: 768px) {
+    .intl-tel-input .country-list {
+      width: 100%; /* Full width on small screens */
+    }
+  }

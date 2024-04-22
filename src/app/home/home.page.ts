@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { OrderPage } from '../order/order.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import { PhoneNumbersPage } from '../phone-numbers/phone-numbers.page';
 
 
 register();
@@ -18,7 +19,7 @@ register();
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent,NavbarPage,CommonModule,HttpClientModule,OrderPage
     ,IonButtons,IonButton,IonMenu,
-    IonMenuButton,IonIcon,IonInput,IonItem,RouterLink],
+    IonMenuButton,IonIcon,IonInput,IonItem,RouterLink,PhoneNumbersPage],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePage {

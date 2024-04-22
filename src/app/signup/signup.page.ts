@@ -6,6 +6,8 @@ import { RouterLink } from '@angular/router';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { Subscription, interval } from 'rxjs';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import { PhoneNumbersPage } from '../phone-numbers/phone-numbers.page';
+declare var intlTelInput: any;
 
 @Component({
   selector: 'app-signup',
@@ -13,12 +15,34 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
   styleUrls: ['./signup.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, RouterLink, ReactiveFormsModule, HttpClientModule, RouterLink,
-    HttpClientJsonpModule],
+    HttpClientJsonpModule,PhoneNumbersPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class SignupPage {
+export class SignupPage  {
+  // @ViewChild('phoneInput') phoneInput!: ElementRef;
+  // ngAfterViewInit(): void {
+  //   intlTelInput(this.phoneInput.nativeElement, {
+  //     utilsScript:
+  //       'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+  //     separateDialCode: true,
+
+  //     preferredCountries: ['us', 'gb', 'br', 'ru', 'cn'],
+  //     customPlaceholder: function (
+  //       selectedCountryPlaceholder: string,
+  //       selectedCountryData: any
+  //     ) {
+  //       return 'e.g. ' + selectedCountryPlaceholder;
+  //     },
+  //   });
+    
+  // }
   countdown: number = 60; // Countdown starts from 60 seconds
+ 
+  customPlaceholder(){
+
+  }
+
   private countdownSubscription!: Subscription;
   private GetItems() {
     const count = this.items.length = 1;
